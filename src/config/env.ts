@@ -14,6 +14,11 @@ const schema = z.object({
   CORS_ORIGIN:            z.string().default('http://localhost:5173'),
   RATE_LIMIT_WINDOW_MS:   z.coerce.number().default(900_000),
   RATE_LIMIT_MAX:         z.coerce.number().default(100),
+  SMTP_HOST:              z.string().default(''),
+  SMTP_PORT:              z.coerce.number().default(587),
+  SMTP_USER:              z.string().default(''),
+  SMTP_PASS:              z.string().default(''),
+  NOTIFY_EMAIL:           z.string().default(''),
 });
 
 const parsed = schema.safeParse(process.env);

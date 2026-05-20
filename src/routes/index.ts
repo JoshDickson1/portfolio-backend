@@ -1,9 +1,12 @@
 import { Router } from 'express';
+import { contactRouter } from './contact';
 
 export const router = Router();
 
 // Health sub-check
 router.get('/', (_, res) => res.json({ version: 'v1', status: 'ok' }));
+
+router.use('/contact', contactRouter);
 
 // Resource routes will be mounted here during implementation phase
 // router.use('/auth',           authRoutes);
@@ -14,5 +17,4 @@ router.get('/', (_, res) => res.json({ version: 'v1', status: 'ok' }));
 // router.use('/skills',         skillRoutes);
 // router.use('/testimonials',   testimonialRoutes);
 // router.use('/certifications', certificationRoutes);
-// router.use('/contact',        contactRoutes);
 // router.use('/upload',         uploadRoutes);
