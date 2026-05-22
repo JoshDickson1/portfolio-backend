@@ -47,7 +47,9 @@ contactRouter.post('/', async (req: Request<object, object, ContactBody>, res: R
         host: env.SMTP_HOST,
         port: env.SMTP_PORT,
         secure: env.SMTP_PORT === 465,
+        requireTLS: env.SMTP_PORT === 587,
         auth: { user: env.SMTP_USER, pass: env.SMTP_PASS },
+        tls: { rejectUnauthorized: false },
       });
 
       const row = (label: string, value: string) =>
