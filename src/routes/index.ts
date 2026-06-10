@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { contactRouter } from './contact';
+import { newsletterRouter } from './newsletter';
 
 export const router = Router();
 
@@ -7,6 +8,7 @@ export const router = Router();
 router.get('/', (_, res) => res.json({ version: 'v1', status: 'ok' }));
 
 router.use('/contact', contactRouter);
+router.use('/newsletter', newsletterRouter);
 
 // Resource routes will be mounted here during implementation phase
 // router.use('/auth',           authRoutes);
