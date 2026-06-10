@@ -11,7 +11,7 @@ const schema = z.object({
   IMAGEKIT_URL_ENDPOINT:  z.string().url(),
   JWT_SECRET:             z.string().min(32),
   JWT_EXPIRES_IN:         z.string().default('7d'),
-  CORS_ORIGIN:            z.string().default('http://localhost:5173'),
+  CORS_ORIGIN:            z.string().default('http://localhost:5173,https://www.joshuadickson.pro,https://joshuadickson.pro'),
   RATE_LIMIT_WINDOW_MS:   z.coerce.number().default(900_000),
   RATE_LIMIT_MAX:         z.coerce.number().default(100),
   SMTP_HOST:              z.string().default(''),

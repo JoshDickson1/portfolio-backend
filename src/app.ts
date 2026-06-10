@@ -17,10 +17,11 @@ export function createApp() {
   app.use(express.json({ limit: '10mb' }));
   app.use(express.urlencoded({ extended: true }));
   app.use(morgan(env.NODE_ENV === 'production' ? 'combined' : 'dev'));
-  app.use(rateLimiter);
 
-  // Health check
+  // Health check must be before rate limiter so Render's checks never get 429'd
   app.get('/health', (_, res) => res.json({ status: 'ok', ts: new Date().toISOString() }));
+
+  app.use(rateLimiter);
 
   // API routes
   app.use('/api/v1', router);
