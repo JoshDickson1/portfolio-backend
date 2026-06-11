@@ -13,7 +13,7 @@ const schema = z.object({
   JWT_EXPIRES_IN:         z.string().default('7d'),
   CORS_ORIGIN:            z.string().default('http://localhost:5173,https://www.joshuadickson.pro,https://joshuadickson.pro'),
   RATE_LIMIT_WINDOW_MS:   z.coerce.number().default(900_000),
-  RATE_LIMIT_MAX:         z.coerce.number().default(100),
+  RATE_LIMIT_MAX:         z.coerce.number().default(300),
   SMTP_HOST:              z.string().default(''),
   SMTP_PORT:              z.coerce.number().default(587),
   SMTP_USER:              z.string().default(''),

@@ -7,6 +7,9 @@ export const rateLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: 'Too many requests, please try again later.' },
+  // Skip preflight requests — a rate-limited OPTIONS reply has no CORS headers,
+  // which the browser misreports as a CORS error.
+  skip: (req) => req.method === 'OPTIONS',
 });
 
 export const strictLimiter = rateLimit({
