@@ -19,6 +19,7 @@ const schema = z.object({
   SMTP_USER:              z.string().default(''),
   SMTP_PASS:              z.string().default(''),
   NOTIFY_EMAIL:           z.string().default(''),
+  GITHUB_PAT:             z.string().default(''),
 });
 
 const parsed = schema.safeParse(process.env);
