@@ -1,0 +1,21 @@
+export declare const env: {
+    NODE_ENV: "development" | "production" | "test";
+    PORT: number;
+    SUPABASE_URL: string;
+    SUPABASE_SERVICE_ROLE_KEY: string;
+    SUPABASE_JWT_SECRET: string;
+    IMAGEKIT_PUBLIC_KEY: string;
+    IMAGEKIT_PRIVATE_KEY: string;
+    IMAGEKIT_URL_ENDPOINT: string;
+    JWT_SECRET: string;
+    JWT_EXPIRES_IN: string;
+    CORS_ORIGIN: string;
+    RATE_LIMIT_WINDOW_MS: number;
+    RATE_LIMIT_MAX: number;
+    SMTP_HOST: string;
+    SMTP_PORT: number;
+    SMTP_USER: string;
+    SMTP_PASS: string;
+    NOTIFY_EMAIL: string;
+    GITHUB_PAT: string;
+};
