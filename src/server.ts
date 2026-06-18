@@ -5,7 +5,7 @@ import { logger } from './utils/logger';
 
 const app = createApp();
 
-app.listen(env.PORT, () => {
+app.listen(4000, () => {
   logger.info(`Server running on port ${env.PORT} [${env.NODE_ENV}]`);
 });
 
